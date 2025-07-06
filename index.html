@@ -10,7 +10,7 @@
     <section id="sobre">
   <h2>Sobre mim</h2>
   <p>
-    Olá! Me chamo Amanda Graziele Carvalho e sou estudante de Engenharia de Software com foco em desenvolvimento backend.
+    Olá! Me chamo Amanda Graziele Carvalho e sou estudante de Análise e desenvolvimento de Software com foco em desenvolvimento backend.
     Tenho experiência prática com C# e testes automatizados usando ferramentas como Selenium e xUnit, além de projetos
     acadêmicos e pessoais que demonstram meu comprometimento em evoluir como desenvolvedora.
   </p>
@@ -31,9 +31,39 @@
     desenvolvidas.
   </p>
 </section>
+<section id="contato" class="contato">
+  <h2>Fale comigo pelo WhatsApp</h2>
+  <form onsubmit="enviarWhatsApp(); return false;">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" rows="4" required></textarea>
+
+    <button type="submit">Enviar pelo WhatsApp</button>
+    <input type="hidden" name="_next" value="https://github.com/Amandagsc/Meu_Portifolio/agradecimento.html">
+  </form>
+</section>
 
 </head>
 <body>
     
 </body>
+<script>
+  function enviarWhatsApp() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    const texto = `Olá, meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+
+    // Substitua o número abaixo pelo seu número do WhatsApp, no formato internacional
+    const numero = '5531988040607'; // Exemplo com DDD 31
+
+    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+  }
+</script>
 </html>
