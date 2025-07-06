@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Ícone do WhatsApp com CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="style.css">
+    <h1>Amanda Graziele Carvalho Da Silva</h1>
+    <img src="Foto.jpeg" alt="Minha Foto">
+    <section id="sobre">
+  <h2>Sobre mim</h2>
+  <p>
+    Olá! Me chamo Amanda Graziele Carvalho e sou estudante de Análise e desenvolvimento de Software com foco em desenvolvimento backend.
+    Tenho experiência prática com C# e testes automatizados usando ferramentas como Selenium e xUnit, além de projetos
+    acadêmicos e pessoais que demonstram meu comprometimento em evoluir como desenvolvedora.
+  </p>
+  <p>
+    Sou apaixonada por resolver problemas com lógica e transformar ideias em soluções reais. Gosto de pensar como uma
+    profissional de verdade mesmo durante meus estudos: organizo metas, entregas e simulo uma rotina de equipe para
+    preparar meu caminho no mercado de tecnologia.
+  </p>
+  <p>
+    Atualmente, estou desenvolvendo sistemas como o GreyMed (voltado para clínicas médicas) e uma plataforma de
+    biblioteca online, buscando sempre aplicar boas práticas de programação, orientação a objetos e uso de banco de
+    dados SQL Server. Estou em constante aprendizado e determinada a conquistar uma vaga como desenvolvedora backend
+    júnior ou analista de testes QA.
+  </p>
+  <p>
+    Acredito que a combinação de disciplina, curiosidade e prática constante é o que constrói uma carreira sólida.
+    Estou pronta para novos desafios, para crescer em equipe e para contribuir com soluções eficientes e bem
+    desenvolvidas.
+  </p>
+</section>
+<section id="contato" class="contato">
+  <h2>Fale comigo pelo WhatsApp</h2>
+  <form onsubmit="enviarWhatsApp(); return false;">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" rows="4" required></textarea>
+
+    <button type="submit">Enviar pelo WhatsApp</button>
+    <input type="hidden" name="_next" value="https://github.com/Amandagsc/Meu_Portifolio/agradecimento.html">
+  </form>
+</section>
+
 </head>
 <body>
-  <section id="contato" class="contato">
-    <h2>Fale comigo</h2>
-
-    <form id="form-contato" action="https://formsubmit.co/seuemail@email.com" method="POST">
-      <!-- FormSubmit config -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://seuusuario.github.io/nomedoseurepositorio/agradecimento.html">
-
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-      <button type="submit">
-        <i class="fab fa-whatsapp"></i> Enviar Mensagem
-      </button>
-    </form>
-  </section>
-
-  <script src="js/script.js"></script>
+    
 </body>
+<script>
+  function enviarWhatsApp() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    const texto = `Olá, meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+
+    // Substitua o número abaixo pelo seu número do WhatsApp, no formato internacional
+    const numero = '5531988040607'; // Exemplo com DDD 31
+
+    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+  }
+</script>
 </html>
